@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>Taptendance</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Taptendance</h1>
+        <button id="theme-toggle">Toggle Theme</button>
+    </div>
+
+    <div id="login-panel" class="panel active">
+        <h2>Login</h2>
+        <select id="role-select">
+            <option value="admin">Admin</option>
+            <option value="student">Student</option>
+        </select>
+        <button id="login-btn">Login</button>
+    </div>
+
+    <div id="admin-panel" class="panel">
+        <h2>Admin Panel</h2>
+        <form id="session-form">
+            <input type="text" id="session-name" placeholder="Session Name" required>
+            <button type="submit">Create Session</button>
+        </form>
+        <h3>Sessions</h3>
+        <ul id="sessions-list"></ul>
+        <h3>Attendance</h3>
+        <table id="attendance-table">
+            <tr><th>Session</th><th>Student</th><th>Time</th></tr>
+        </table>
+        <button id="export-btn">Export to Excel</button>
+    </div>
+
+    <div id="student-panel" class="panel">
+        <h2>Student Panel</h2>
+        <select id="session-select"></select>
+        <div id="qrcode"></div>
+    </div>
+
+    <div id="scanner-panel" class="panel">
+        <h2>QR Scanner</h2>
+        <video id="preview"></video>
+        <button id="camera-toggle">Toggle Camera</button>
+        <button id="back-btn">Back</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instascan@1.0.0/dist/instascan.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/qr-generator.js"></script>
+    <script src="assets/js/qr-scanner.js"></script>
+    <script src="assets/js/export.js"></script>
+</body>
+</html>
